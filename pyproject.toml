@@ -1,0 +1,20 @@
+[project]
+name = "workplace-simulator"
+version = "1.0.0"
+description = "AI Workplace Failure Simulator - OpenEnv environment"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.6.0",
+  "openai>=1.40.0",
+  "streamlit>=1.33.0",
+  "PyYAML>=6.0.1",
+  "openenv-core>=0.2.3",
+]
+
+[project.scripts]
+server = "server.app:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+

@@ -1,0 +1,33 @@
+name: workplace-simulator
+version: 1.0
+
+description: >
+  A real-world AI workplace simulation environment where agents must prioritize tasks,
+  handle interruptions, manage deadlines, and respond to emotional stakeholders.
+
+tasks:
+  - name: prioritization
+    difficulty: easy
+  - name: context_switching
+    difficulty: medium
+  - name: crisis_management
+    difficulty: hard
+
+observation_space:
+  type: structured
+  fields:
+    - message
+    - time
+    - tasks
+    - urgency
+    - mood
+
+action_space:
+  type: structured
+  fields:
+    - action
+    - reason
+    - confidence
+
+reward_range: [0.0, 1.0]
+
