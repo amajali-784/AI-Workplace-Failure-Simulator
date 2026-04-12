@@ -137,8 +137,9 @@ def _run_episode(
         if not msg:
             msg = type(exc).__name__
         last_error = msg
+        # CRITICAL: Must output score strictly in (0, 1) range, never 0.00
         print(
-            f"[END] success={_bool_str(False)} steps={steps} score={0.00:.2f} rewards={_fmt_rewards(rewards)}"
+            f"[END] success={_bool_str(False)} steps={steps} score={0.01:.2f} rewards={_fmt_rewards(rewards)}"
         )
     finally:
         try:

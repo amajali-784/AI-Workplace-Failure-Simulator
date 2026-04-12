@@ -538,6 +538,59 @@ def root():
                 <div class="mood-label" id="mood-text">Normal</div>
             </div>
             
+            <!-- KPI Dashboard -->
+            <div class="kpi-dashboard" id="kpi-section" style="display: none;">
+                <h3>📊 KPI Performance Dashboard</h3>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon">✅</div>
+                        <div class="kpi-value" id="kpi-tasks">0</div>
+                        <div class="kpi-label">Tasks Completed</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon">⚡</div>
+                        <div class="kpi-value" id="kpi-efficiency">0.00</div>
+                        <div class="kpi-label">Efficiency Score</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon">🏆</div>
+                        <div class="kpi-value" id="kpi-status">-</div>
+                        <div class="kpi-label">Performance Status</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Performance Summary -->
+            <div class="performance-summary" id="perf-summary" style="display: none;">
+                <h3>📈 Episode Performance Summary</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Steps:</span>
+                        <span class="summary-value" id="sum-steps">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Total Reward:</span>
+                        <span class="summary-value" id="sum-reward">0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Tasks Completed:</span>
+                        <span class="summary-value" id="sum-tasks">0/3</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Mood Transitions:</span>
+                        <span class="summary-value" id="sum-mood">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Loops Detected:</span>
+                        <span class="summary-value" id="sum-loops">0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Mistakes Made:</span>
+                        <span class="summary-value" id="sum-mistakes">0</span>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Action Panel -->
             <div class="action-panel">
                 <h3>🎮 Take Action</h3>
