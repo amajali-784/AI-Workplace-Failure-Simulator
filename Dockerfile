@@ -40,5 +40,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import requests; r = requests.get('http://localhost:7860/health'); exit(0 if r.status_code == 200 else 1)"
 
 # Run simple FastAPI server with embedded UI
-CMD ["python", "server_simple.py"]
+CMD ["python", "server_ultra.py"]
 

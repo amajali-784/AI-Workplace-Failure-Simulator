@@ -96,6 +96,7 @@ class WorkplaceEnv:
         assert self._i is not None
         pending = [t for t in self._i.state["tasks"] if t not in self._i.state["completed"]]
         self._i.state["pending"] = pending
+        kpi = generate_kpi(self._i.state)
         return {
             "time": int(self._i.state["time"]),
             "tasks": list(self._i.state["tasks"]),
@@ -117,6 +118,7 @@ class WorkplaceEnv:
             "mistake_type": str(self._i.state.get("mistake_type", "")),
             "recovery_used": bool(self._i.state.get("recovery_used", False)),
             "last_confidence": self._i.state.get("last_confidence"),
+            "kpi": kpi,
         }
 
     def step(self, action: Action) -> Tuple[Observation, float, bool, dict]:

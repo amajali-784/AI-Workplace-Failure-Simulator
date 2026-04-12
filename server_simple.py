@@ -66,31 +66,32 @@ def root():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Workplace Failure Simulator</title>
+    <title>🤖 AI Workplace Failure Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
-            color: #333;
+            color: #1a1a2e;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
             overflow: hidden;
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             color: white;
-            padding: 40px;
+            padding: 50px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -103,29 +104,60 @@ def root():
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: moveBackground 20s linear infinite;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px);
+            background-size: 60px 60px;
+            animation: moveBackground 15s linear infinite;
         }
         
         @keyframes moveBackground {
             0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            100% { transform: translate(60px, 60px); }
         }
         
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 15px;
             position: relative;
             z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
         }
         
         .header p {
             opacity: 0.95;
-            font-size: 1.2em;
+            font-size: 1.3em;
             position: relative;
             z-index: 1;
+            font-weight: 400;
+        }
+        
+        .mode-selector {
+            position: relative;
+            z-index: 1;
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .mode-btn {
+            padding: 10px 25px;
+            border: 2px solid white;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        .mode-btn:hover, .mode-btn.active {
+            background: white;
+            color: #667eea;
+            transform: scale(1.05);
         }
         
         .content { 
@@ -134,20 +166,31 @@ def root():
         
         .status-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         
         .status-item {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             padding: 25px;
-            border-radius: 15px;
+            border-radius: 18px;
             text-align: center;
             transition: all 0.3s;
-            border: 2px solid transparent;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
         
+        .status-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
         .status-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
